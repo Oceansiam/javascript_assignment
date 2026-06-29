@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title> Javascript Array</title>
+    </head>
+    <body>
+        <h3>Today Fruits</h3>
+        <ul id="fruit-list"></ul>
+        <hr/>
+        <h3>Today Vegetables</h3>
+        <ul id="veg-list"></ul>
+        <script>
+            const fruits = ["Apple", "Banana", "Orange", "Mango", "Strawberry"]
+            const vegetables = ["Carrot", "Broccoli", "Spinach", "Tomato", "Cucumber"]
+
+            console.log("Fruits:")
+            for (let i = 0; i < fruits.length; i++) {
+
+                console.log(fruits[i]);
+                document.getElementById("fruit-list").innerHTML += `<li>${fruits[i]}</li>`;
+            }
+            console.log("Vegetables:")
+            for (let x = 0; x < vegetables.length; x++) {
+                console.log(vegetables[x])
+                document.getElementById("veg-list").innerHTML += `<li>${vegetables[x]}</li>`;
+            }
+
+        </script>
+    </body>
+</html>
