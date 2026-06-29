@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form Render</title>
+    </head>
+    <style>
+        .border {
+          border-radius: 4px;
+          display: flex;
+          justify-content: center;
+        }
+        .button_edit {
+            background-color: blue;
+            color: white;
+            border-radius: 4px;
+            margin-top: 10px;
+            text-align: center;
+            position: absolute;
+            right: 10px;
+            padding: 5px;
+        }
+
+        .spacing {
+         
+        }
+        .textBox {
+         
+        
+        } 
+    </style>
+    <body>
+        <div class="border">
+            <fieldset>
+                    <legend>General Info</legend>
+                    <div>
+                    <label class="spacing" for="itemName">Item Name</label>
+                    <input id="itemName" type="text" name="itemName">
+                </div>
+                <div class="spacing">
+                    <label class="spacing" for="descriptipn">Description</label>
+                    <input class="textBox" id="description" type="Textarea" name="itemDescription">
+                </div>
+                <div class="spacing">
+                    <label class="spacing" for="category">Category</label>
+                    <select id="category" name="category">
+                        <option>notSpecified</option>
+                        <option>consumption</option>
+                        <option>household</option>
+                        <option>electronic</option>
+                        <option>gadget</option>
+                    </select>
+                </div>
+            </fieldset>
+        </div>
+            
+        <div class="border">
+             <fieldset>
+                 <legend>Misc.</legend>
+            <div>
+                <label for="inventory">Inventory Amount</label>
+                <input id="inventory" name="inventoryAmount" type="text">
+            </div>
+            <div>
+                <label for="list_price">List price</label>
+                <input id="list_price" name="listPrice" type="text">
+            </div>
+            <div class="spacing">
+                <label for="AvailableStores">Available Stores</label>
+                <input id="AvailableStores" name="availableStore[]" type="checkbox">
+                <label for="AvailableStores">Bangkok</label>
+                <input id="AvailableStores" name="availableStore[]" type="checkbox">
+                <label for="AvailableStores">Pattaya</label>
+                <input id="AvailableStores" name="availableStore[]" type="checkbox">
+                <label for="AvailableStores">Phuket</label>
+            </div>
+            <div>
+                <label for="AvailableStores2">Available Stores</label>
+                <input id="AvailableStores2" name="status" type="radio">
+                <label for="AvailableStores2">Active</label>
+                <input id="AvailableStores2" name="status" type="radio">
+                <label for="AvailableStores2">Inactive</label>
+                
+            </div>
+        </fieldset>
+        </div>
+        <div class="border">
+            <fieldset>
+                <legend>Staff</legend>
+                <div>
+                    <label for="staffemail">Staff Email</label>
+                    <input id="staffemail" name="staffEmail" type="text">
+                </div>
+            </fieldset>
+        </div>
+            
+            <div>
+                <Button class="button_edit">Submit Form</Button>
+            </div>
+           
+       
+    </body>
+</html>
