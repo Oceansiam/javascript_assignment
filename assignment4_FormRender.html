@@ -5,97 +5,111 @@
     </head>
     <style>
         .border {
-          border-radius: 4px;
-          display: flex;
-          justify-content: center;
+            border-radius: 4px;
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
         }
+        .button_border {
+            text-align: right;
+        }
+        /* I search on the internet on how to align fieldset together*/
         .button_edit {
             background-color: blue;
             color: white;
             border-radius: 4px;
             margin-top: 10px;
             text-align: center;
-            position: absolute;
-            right: 10px;
             padding: 5px;
+           
         }
 
         .spacing {
+            width: 150px;
+            display: inline-block;
+            vertical-align: top;
          
         }
         .textBox {
-         
-        
-        } 
+            width: calc(98% - 150px);
+            height: 80px;
+
+        }
+        .line_input {
+            margin-bottom: 5px;
+        }
     </style>
     <body>
-        <div class="border">
-            <fieldset>
+        <form action="https://teach-backend-fawn.vercel.app/api/product" method="POST" enctype="multipart/form-data">
+            <div class="border">
+                <fieldset>
                     <legend>General Info</legend>
-                    <div>
-                    <label class="spacing" for="itemName">Item Name</label>
-                    <input id="itemName" type="text" name="itemName">
-                </div>
-                <div class="spacing">
-                    <label class="spacing" for="descriptipn">Description</label>
-                    <input class="textBox" id="description" type="Textarea" name="itemDescription">
-                </div>
-                <div class="spacing">
-                    <label class="spacing" for="category">Category</label>
-                    <select id="category" name="category">
-                        <option>notSpecified</option>
-                        <option>consumption</option>
-                        <option>household</option>
-                        <option>electronic</option>
-                        <option>gadget</option>
-                    </select>
-                </div>
-            </fieldset>
-        </div>
-            
-        <div class="border">
-             <fieldset>
-                 <legend>Misc.</legend>
-            <div>
-                <label for="inventory">Inventory Amount</label>
-                <input id="inventory" name="inventoryAmount" type="text">
+                    <div class="line_input">
+                        <label class="spacing" for="itemName">Item Name</label>
+                        <input id="itemName" type="text" name="itemName">
+                    </div>
+                    <div class="line_input">
+                        <label class="spacing" for="descriptipn">Description</label>
+                        <textarea class="textBox" id="description" name="itemDescription"></textarea>
+                    </div>
+                    <div class="line_input">
+                        <label class="spacing" for="category">Category</label>
+                        <select id="category" name="category">
+                            <option value="notSpecified">notSpecified</option>
+                            <option value="consumption">consumption</option>
+                            <option value="household">household</option>
+                            <option value="electronic">electronic</option>
+                            <option value="gadget">gadget</option>
+                        </select>
+                    </div>
+                </fieldset>
             </div>
-            <div>
-                <label for="list_price">List price</label>
-                <input id="list_price" name="listPrice" type="text">
-            </div>
-            <div class="spacing">
-                <label for="AvailableStores">Available Stores</label>
-                <input id="AvailableStores" name="availableStore[]" type="checkbox">
-                <label for="AvailableStores">Bangkok</label>
-                <input id="AvailableStores" name="availableStore[]" type="checkbox">
-                <label for="AvailableStores">Pattaya</label>
-                <input id="AvailableStores" name="availableStore[]" type="checkbox">
-                <label for="AvailableStores">Phuket</label>
-            </div>
-            <div>
-                <label for="AvailableStores2">Available Stores</label>
-                <input id="AvailableStores2" name="status" type="radio">
-                <label for="AvailableStores2">Active</label>
-                <input id="AvailableStores2" name="status" type="radio">
-                <label for="AvailableStores2">Inactive</label>
                 
-            </div>
-        </fieldset>
-        </div>
-        <div class="border">
-            <fieldset>
-                <legend>Staff</legend>
-                <div>
-                    <label for="staffemail">Staff Email</label>
-                    <input id="staffemail" name="staffEmail" type="text">
+            <div class="border">
+                <fieldset>
+                <legend>Misc.</legend>
+                <div class="line_input">
+                    <label class="spacing" for="inventory">Inventory Amount</label>
+                    <input id="inventory" name="inventoryAmount" type="number">
+                </div>
+                <div class="line_input">
+                    <label class="spacing" for="list_price">List price</label>
+                    <input id="list_price" name="listPrice" type="number">
+                </div>
+                <div class="line_input">
+                    <label class="spacing" for="AvailableStores">Available Stores</label>
+                    <input id="AvailableStores" name="availableStore[]" type="checkbox">
+                    <label for="AvailableStores">Bangkok</label>
+                    <input id="AvailableStores2" name="availableStore[]" type="checkbox">
+                    <label for="AvailableStores2">Pattaya</label>
+                    <input id="AvailableStores3" name="availableStore[]" type="checkbox">
+                    <label for="AvailableStores3">Phuket</label>
+                </div>
+                <div class="line_input">
+                    <label class ="spacing" for="AvailableStores2">Available Stores</label>
+                    <input id="status" name="status" type="radio">
+                    <label for="status">Active</label>
+                    <input id="status2" name="status" type="radio">
+                    <label for="status2">Inactive</label>
+                    
                 </div>
             </fieldset>
-        </div>
-            
-            <div>
-                <Button class="button_edit">Submit Form</Button>
             </div>
+
+            <div class="border">
+                <fieldset>
+                    <legend>Staff</legend>
+                    <div class="line_input">
+                        <label class="spacing" for="staffEmail">Staff Email</label>
+                        <input id="staffEmail" name="staffEmail" type="email">
+                    </div>
+                </fieldset>
+            </div>
+                
+            <div class="border button_border">
+                <button class="button_edit">Submit Form</button>
+            </div>
+        </form>
            
        
     </body>
