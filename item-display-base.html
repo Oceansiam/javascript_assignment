@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Item Display</title>
+    <script src="public/item-list.js"> </script>
+    <style>
+      .prop-row {
+        display: flex;
+      }
+      .prop-name {
+        width: 140px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <div>
+        <h2>Item Display</h2>
+      </div>
+      <div>
+        <select name="item-list" id="item-list" onchange="testchange(event)"></select>
+      </div>
+      <hr />
+      <div class="prop-row">
+        <div class="prop-name">ID</div>
+        <div id="item-id"></div>
+      </div>
+      <div class="prop-row">
+        <div class="prop-name">Name</div>
+        <div id="item-name"></div>
+      </div>
+      <div class="prop-row">
+        <div class="prop-name">Category</div>
+        <div id="item-category"></div>
+      </div>
+      <div class="prop-row">
+        <div class="prop-name">Inventory Amt.</div>
+        <div id="item-inventory"></div>
+      </div>
+      <div class="prop-row">
+        <div class="prop-name">List price</div>
+        <div id="item-price"></div>
+      </div>
+    </div>
+    <script>
+      function testchange(event) {
+        console.log("==> select change: ", event);
+        console.log("==> value : ", event.target.value);
+
+        const item = items[event.target.value];
+        
+        document.getElementById("item-id").innerHTML = item.id;
+        document.getElementById("item-name").innerHTML = item.name;
+        document.getElementById("item-category").innerHTML = item.category;
+        document.getElementById("item-inventory").innerHTML = item.inventory;
+        document.getElementById("item-price").innerHTML = item.price;
+        console.log(item)
+        
+       
+    
+      }
+      let optionsHtml = "";
+      for (let i=0; i < items.length; i++) {
+        const name = items[i].name;
+        const id = items[i].id;
+        const category = items[i].category;
+        const inventory = items[i].inventory;
+        const price = items[i].price;
+        optionsHtml += `<option value="${i}">${name}</option>`;
+        
+        /* console.log(id);
+        console.log(name);
+        console.log(category);
+        console.log(inventory);
+        console.log(price); */
+        
+      } 
+      console.log(optionsHtml);
+      document.getElementById("item-list").innerHTML = optionsHtml;
+    
+    
+    </script>
+  </body>
+</html>
