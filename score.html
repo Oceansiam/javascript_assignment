@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+  <head>
+    <title>JQuery Assignment 1</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="data.js"></script>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      table {
+        border-collapse: separate;
+        border-spacing: 0;
+        border: 1px solid black;
+        border-radius: 4px; /* works here */
+        overflow: hidden;
+        width: 60%;
+      }
+
+      table tr th,
+      table tr td {
+        border: 1px solid black;
+        padding: 5px 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 5%">ID</th>
+            <th style="width: 30%">Name</th>
+            <th>Midterm</th>
+            <th>Final</th>
+            <th>Total</th>
+            <th>Grade</th>
+          </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+      </table>
+    </div>
+    <script>
+      $(document).ready(function () {
+        
+        // Usually jQuery start in this function.
+        for (let i = 0; i < students.length; i++) {
+          const id =  students[i].id; 
+          const name = students[i].name;
+          //const participation = students[i].participation;
+          //const quiz = students[i].quiz;
+          let midterm = students[i].midterm;
+          let final = students[i].final;
+          //const project1 = students[i].project1;
+          //const project2 = students[i].project2;
+          let total = Number(midterm+final);
+          let grade = "";
+          if (total >= 80) {
+            grade = "A"
+          }
+          else if (total >= 70 && total <= 79) {
+            grade = "B"
+          }
+          else if (total >= 60 && total <= 69) {
+            grade = "C"
+          }
+          else if (total >= 50 && total <= 59) {
+            grade = "D"
+          }
+          else {
+            grade = "F"
+          }
+          const html = `<tr id="row-${i}"><td>${id}</td><td>${name}</td><td>${midterm}</td>
+          <td>${final}</td><td>${total}</td><td>${grade}</td></tr>`; 
+          $("#table-body").append(html); 
+          $("#row-${i}").on("click", function() {
+            
+          })
+        }
+      });
+    </script>
+  </body>
+</html>
